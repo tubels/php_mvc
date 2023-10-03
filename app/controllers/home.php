@@ -1,16 +1,13 @@
 <?php
 
-class Home{
-    function index(){
+class Home extends Controller{
+    function index($a, $b, $c){
+        show($a);
+        show($b);
+        show($c);
+
+        $image_class = $this->loadModel("image_class");
+        show($image_class);
         $this->view("home");
     }
-
-    function view($view){
-        if(file_exists("../app/views/" . $view . ".php")){
-            include "../app/views/" . $view . ".php";
-        }else{
-            include "../app/views/404.php";
-        }
-    }
 }
-echo "<h1>home view</h1>";
